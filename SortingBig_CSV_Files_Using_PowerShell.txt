@@ -1,0 +1,13 @@
+== Provides the detail about File meta data
+Import-Csv C:\Dir\FileName.csv | Get-Member
+
+== Allows you to which column to select. I chosen ID column
+Import-Csv C:\Dir\FileName.csv | select ID | Get-Member
+
+
+== Creates the new .csv file with only ID column/value in that.
+Import-Csv C:\Dir\FileName.csv | select ID | Export-Csv -Path C:\Dir\NewFileName.csv –NoTypeInformation
+
+
+== Sort the chosen field [fieldName -Descending] and creates a new .csv file
+Import-Csv C:\Dir\unsortedFileName.csv | sort fieldName -Descending | Export-Csv -Path C:\Dir\sortedFileName.csv -NoTypeInformation
